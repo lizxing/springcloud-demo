@@ -1,0 +1,25 @@
+server:
+  port: 8007
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8006 #配置中心地址
+      label: master #分支名称
+      name: master-config #配置文件名
+      profile: dev #后缀
+      # 组装起来就是 http://localhost:8006/master/master-config-dev
+      username: root
+      password: 123456
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'

@@ -1,0 +1,11 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: feign-business1-server
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://root:123456@localhost:8001/eureka/
